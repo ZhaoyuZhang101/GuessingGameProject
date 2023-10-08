@@ -28,6 +28,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -166,14 +168,18 @@ public class ExamController implements Initializable {
                     if (quizIndex < Quizs.length()-1) {
                         showTitle();
                     } else {
-                        ShowFinal();
+                        try {
+                            ShowFinal();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
             });
         }
     }
 
-    public void ShowFinal() {
+    public void ShowFinal() throws IOException {
         answersSpace.getChildren().clear();
         QuestionsPart.setVisible(false);
         isPlay = false;
@@ -184,6 +190,20 @@ public class ExamController implements Initializable {
         label.setPrefSize(VideoPage.getPrefWidth(), VideoPage.getPrefHeight());
         VideoPage.getChildren().add(label);
         StackPane.setAlignment(label, Pos.CENTER);
+
+        JSONObject user = new JSONObject();
+        user.put("name", Application.currentUserName);
+        user.put("ID", Application.currentUserID);
+        user.put("Score", currentScore);
+
+        JSONObject rankJson = readJson("src/main/resources/com/project/guessingbirdgame/QuizJsons/Rank.json");
+        JSONArray rankInfo = rankJson.getJSONArray("Rank");
+        rankInfo.put(user);
+
+        JSONObject rankContent = new JSONObject();
+        rankContent.put("Rank", rankInfo);
+        Files.writeString(Paths.get("src/main/resources/com/project/guessingbirdgame/QuizJsons/Rank.json"), rankContent.toString(4));
+
     }
 
     public void showTitle() {

@@ -72,9 +72,9 @@
                         <configuration>
                             <mainClass>com.project.guessingbirdgame/com.project.guessingbirdgame.Application
                             </mainClass>
-                            <launcher>app</launcher>
-                            <jlinkZipName>app</jlinkZipName>
-                            <jlinkImageName>app</jlinkImageName>
+                            <launcher>Application</launcher>
+                            <jlinkZipName>Application</jlinkZipName>
+                            <jlinkImageName>Application</jlinkImageName>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
