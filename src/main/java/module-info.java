@@ -1,8 +1,9 @@
 module com.project.guessingbirdgame {
-    requires javafx.controls;
-    requires javafx.fxml;
-    requires javafx.media;
     requires org.json;
+    requires javafx.graphics;
+    requires javafx.fxml;
+    requires javafx.controls;
+    requires javafx.media;
 
 
     opens com.project.guessingbirdgame to javafx.fxml;

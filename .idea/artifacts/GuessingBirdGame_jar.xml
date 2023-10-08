@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact name="GuessingBirdGame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GuessingBirdGame_jar</output-path>
+    <root id="root">
+      <element id="archive" name="GuessingBirdGame.jar">
+        <element id="module-output" name="GuessingBirdGame" />
+      </element>
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.json:json:20220320" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-media:win:18.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:21-ea+5" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-media:18.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:21-ea+5" />
+    </root>
+  </artifact>
+</component>

@@ -5,11 +5,19 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.geometry.Insets?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.project.guessingbirdgame.Controllers.LearnController" stylesheets="@css/style.css" styleClass="learnPage">
     <Button fx:id="BackButton" onAction="#Back" text="BACK" styleClass="BackButton"/>
     <ScrollPane fx:id="Window" styleClass="scrollPane">
-        <VBox fx:id="Content" alignment="CENTER" spacing="20">
-        </VBox>
+        <padding>
+            <Insets left="20" right="20" top="20" bottom="20"/>
+        </padding>
+        <FlowPane fx:id="Content" alignment="CENTER">
+            <padding>
+                <Insets left="20" right="20" top="20" bottom="20"/>
+            </padding>
+        </FlowPane>
     </ScrollPane>
 </VBox>

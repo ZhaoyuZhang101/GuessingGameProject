@@ -1,8 +1,8 @@
 .Card {
     -fx-background-color: rgba(255, 255, 255, 0.4);
     -fx-background-radius: 5% 5%;
-    -fx-min-width: 300px;
-    -fx-min-height: 600px;
+    -fx-min-width: 250px;
+    -fx-min-height: 400px;
     -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
 }
 .Card:hover {
@@ -15,14 +15,14 @@
     -fx-min-width: 80;
     -fx-min-height: 40;
 
-    -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 .BackButton:hover {
     -fx-background-color: rgba(255, 255, 255, 0.3);
     -fx-background-radius: 5% 5%;
     -fx-min-width: 80;
     -fx-min-height: 40;
-    -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, black,10, 0, 0, 0);
 }
 
 .VideoCard {
@@ -49,10 +49,19 @@
     -fx-padding: 80 80 80 80;
     -fx-alignment: center;
 }
+.Page2 {
+    -fx-background-color: linear-gradient(to right, purple, blue);
+    -fx-padding: 0 0 0 0;
+    -fx-alignment: center;
+}
 
 .learnPage {
-    -fx-background-color: linear-gradient(to right, rgb(50, 247, 214), rgb(68, 196, 255));
+    -fx-background-color: linear-gradient(to right, purple, blue);
     -fx-padding: 0 0 0 0;
+}
+
+#Content {
+    -fx-background-radius: 5% 5%;
 }
 
 
@@ -61,7 +70,13 @@
 }
 
 .scrollPane .viewport {
-    -fx-background-color: rgba(255,255,255,0.5);
+    -fx-background-color: rgba(255,255,255,0);
+    -fx-background-radius: 5% 5%;
+}
+
+.listView {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 5% 5%;
 }
 
 

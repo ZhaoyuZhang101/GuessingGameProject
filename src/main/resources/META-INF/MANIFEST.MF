@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: com.project.guessingbirdgame.Application
+Class-Path: javafx-graphics-21-ea+5-win.jar javafx-fxml-21-ea+5-win.jar 
+ json-20220320.jar javafx-media-18.0.2-win.jar javafx-controls-21-ea+5.j
+ ar javafx-graphics-21-ea+5.jar javafx-base-21-ea+5-win.jar javafx-contr
+ ols-21-ea+5-win.jar javafx-fxml-21-ea+5.jar javafx-media-18.0.2.jar jav
+ afx-base-21-ea+5.jar
