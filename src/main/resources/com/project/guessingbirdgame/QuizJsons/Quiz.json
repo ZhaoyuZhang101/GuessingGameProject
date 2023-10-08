@@ -2,14 +2,36 @@
   "Quiz": [
     {
       "Name": "sampleQuiz1",
-      "Question": "SampleQuesion 1",
+      "Question": "SampleQuesion 1-----------------------------------------------------------=------------------?",
       "Video": "SampleBird1.mp4",
       "Answer": [
-        "answer1",
-        "answer2",
-        "answer3"
+        "this is answer1",
+        "this is answer2",
+        "this is answer3"
       ],
-      "CorrectAnswer": "answer2"
+      "CorrectAnswer": "this is answer3"
+    },
+    {
+      "Name": "sampleQuiz2",
+      "Question": "SampleQuesion 2-----------------------------------------------------------=------------------?",
+      "Video": "SampleBird2.mp4",
+      "Answer": [
+        "this is answer1",
+        "this is answer2",
+        "this is answer3"
+      ],
+      "CorrectAnswer": "this is answer2"
+    },
+    {
+      "Name": "sampleQuiz3",
+      "Question": "What is the name of this song?",
+      "Video": "RickAstley.mp4",
+      "Answer": [
+        "Never Ganna Give You Up",
+        "Love Story",
+        "Paries"
+      ],
+      "CorrectAnswer": "Never Ganna Give You Up"
     }
   ]
 }

@@ -3,6 +3,7 @@
     -fx-background-radius: 5% 5%;
     -fx-min-width: 300px;
     -fx-min-height: 600px;
+    -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
 }
 .Card:hover {
     -fx-background-color: rgba(255, 255, 255, 0.6);
@@ -13,12 +14,15 @@
     -fx-background-radius: 5% 5%;
     -fx-min-width: 80;
     -fx-min-height: 40;
+
+    -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
 }
 .BackButton:hover {
     -fx-background-color: rgba(255, 255, 255, 0.3);
     -fx-background-radius: 5% 5%;
     -fx-min-width: 80;
     -fx-min-height: 40;
+    -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
 }
 
 .VideoCard {
@@ -26,9 +30,11 @@
     -fx-background-radius: 5% 5%;
     -fx-min-width: 200px;
     -fx-min-height: 100px;
+    -fx-effect: dropshadow(gaussian, black, 50, 0, 0, 0);
 }
 .VideoCard:hover {
     -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 
 .Label {
@@ -56,4 +62,19 @@
 
 .scrollPane .viewport {
     -fx-background-color: rgba(255,255,255,0.5);
+}
+
+
+#AnswerButton {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 80;
+    -fx-min-height: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0, 0.6), 10, 0, 0, 0);
+}
+#AnswerButton:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 80;
+    -fx-min-height: 40;
 }

@@ -19,5 +19,6 @@
 
 #QuestionPart {
     -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-padding: 20 20 20 20;
     -fx-background-radius: 5% 5%;
 }

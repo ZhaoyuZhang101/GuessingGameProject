@@ -1,6 +1,6 @@
 package com.project.guessingbirdgame.Controllers;
 
-import com.project.guessingbirdgame.HelloApplication;
+import com.project.guessingbirdgame.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -30,19 +30,19 @@ public class MainController implements Initializable{
     }
 
     public void LearningPage(MouseEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/learn-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/learn-view.fxml"));
         Stage stage = (Stage) hBox.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
     }
 
     public void ExamPage(MouseEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/exam-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/exam-view.fxml"));
         Stage stage = (Stage) hBox.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
     }
 
     public void RankPage(MouseEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/main-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/main-view.fxml"));
         Stage stage = (Stage) hBox.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
     }

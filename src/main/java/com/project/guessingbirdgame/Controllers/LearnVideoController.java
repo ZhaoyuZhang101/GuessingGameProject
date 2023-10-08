@@ -1,6 +1,6 @@
 package com.project.guessingbirdgame.Controllers;
 
-import com.project.guessingbirdgame.HelloApplication;
+import com.project.guessingbirdgame.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -27,13 +27,13 @@ public class LearnVideoController implements Initializable {
     }
 
     public void loadVideo(File file) throws IOException {
-        Media media = new Media(String.valueOf(HelloApplication.class.getResource("LearnVideos/"+file.getName())));
+        Media media = new Media(String.valueOf(Application.class.getResource("LearnVideos/"+file.getName())));
         MediaPlayer player = new MediaPlayer(media);
         mediaView.setMediaPlayer(player);
         player.setAutoPlay(true);
         player.setMute(false);
         player.setOnEndOfMedia(() -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/learn-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/learn-view.fxml"));
             Stage stage = (Stage) VideoPage.getScene().getWindow();
             try {
                 stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
@@ -45,7 +45,7 @@ public class LearnVideoController implements Initializable {
     }
 
     public void Back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/learn-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/learn-view.fxml"));
         Stage stage = (Stage) VideoPage.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
     }

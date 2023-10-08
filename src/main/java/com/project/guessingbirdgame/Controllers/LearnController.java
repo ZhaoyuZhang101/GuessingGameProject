@@ -1,10 +1,7 @@
 package com.project.guessingbirdgame.Controllers;
 
-import com.project.guessingbirdgame.HelloApplication;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import com.project.guessingbirdgame.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -12,13 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -37,7 +31,7 @@ public class LearnController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Window.setBackground(Background.EMPTY);
         Content.prefWidthProperty().bind(Window.widthProperty());
-        File learnVideoFolder = new File(Objects.requireNonNull(HelloApplication.class.getResource("LearnVideos")).getPath());
+        File learnVideoFolder = new File(Objects.requireNonNull(Application.class.getResource("LearnVideos")).getPath());
         File[] files = learnVideoFolder.listFiles();
         int index = 0;
         for (int x=0; x<=10; x++) {
@@ -63,8 +57,8 @@ public class LearnController implements Initializable {
 
         AnchorPane videoContent = new AnchorPane();
         videoContent.setId("VideoCard");
-        Media media = new Media(String.valueOf(HelloApplication.class.getResource("LearnVideos/"+file.getName())));
-        videoContent.getStylesheets().add(String.valueOf(HelloApplication.class.getResource("fxmls/css/videoStyle.css")));
+        Media media = new Media(String.valueOf(Application.class.getResource("LearnVideos/"+file.getName())));
+        videoContent.getStylesheets().add(String.valueOf(Application.class.getResource("fxmls/css/videoStyle.css")));
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(false);
         MediaView mediaView = new MediaView(mediaPlayer);
@@ -72,7 +66,7 @@ public class LearnController implements Initializable {
         mediaView.fitWidthProperty().bind(videoContent.widthProperty());
         mediaView.setOnMouseClicked(event -> {
             System.out.println("点击");
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/learn-video-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/learn-video-view.fxml"));
             Stage stage = (Stage) Window.getScene().getWindow();
             try {
                 stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
@@ -92,7 +86,7 @@ public class LearnController implements Initializable {
     }
 
     public void Back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxmls/main-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fxmls/main-view.fxml"));
         Stage stage = (Stage) Window.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
     }
