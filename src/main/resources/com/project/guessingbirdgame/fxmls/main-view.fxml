@@ -1,0 +1,19 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="hBox" alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.project.guessingbirdgame.Controllers.MainController" stylesheets="@css/style.css" styleClass="Page">
+    <VBox fx:id="learningCard" alignment="CENTER" styleClass="Card" onMouseClicked="#LearningPage">
+        <Label fx:id="learningText" alignment="CENTER" text="Learn" styleClass="Label"/>
+    </VBox>
+
+    <VBox fx:id="examCard" alignment="CENTER" styleClass="Card" onMouseClicked="#ExamPage">
+        <Label fx:id="examText" alignment="CENTER" text="Exam" styleClass="Label"/>
+    </VBox>
+
+    <VBox fx:id="rankingCard" alignment="CENTER" styleClass="Card" onMouseClicked="#RankPage">
+        <Label fx:id="rankingText" alignment="CENTER" text="Rank" styleClass="Label"/>
+    </VBox>
+
+</HBox>

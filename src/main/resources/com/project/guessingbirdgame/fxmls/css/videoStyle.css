@@ -1,0 +1,23 @@
+#VideoCard {
+    -fx-background-color: rgba(255, 255, 255, 1.0);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 200px;
+    -fx-min-height: 100px;
+}
+#VideoCard:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 200px;
+    -fx-min-height: 100px;
+}
+
+#Video {
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 200px;
+    -fx-min-height: 100px;
+}
+
+#QuestionPart {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 5% 5%;
+}

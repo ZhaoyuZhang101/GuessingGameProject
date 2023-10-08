@@ -1,0 +1,15 @@
+{
+  "Quiz": [
+    {
+      "Name": "sampleQuiz1",
+      "Question": "SampleQuesion 1",
+      "Video": "SampleBird1.mp4",
+      "Answer": [
+        "answer1",
+        "answer2",
+        "answer3"
+      ],
+      "CorrectAnswer": "answer2"
+    }
+  ]
+}

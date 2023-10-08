@@ -1,0 +1,59 @@
+.Card {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 300px;
+    -fx-min-height: 600px;
+}
+.Card:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+}
+
+.BackButton {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 80;
+    -fx-min-height: 40;
+}
+.BackButton:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 80;
+    -fx-min-height: 40;
+}
+
+.VideoCard {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-background-radius: 5% 5%;
+    -fx-min-width: 200px;
+    -fx-min-height: 100px;
+}
+.VideoCard:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+}
+
+.Label {
+    -fx-font-family: 'SimHei';
+    -fx-alignment: center;
+    -fx-font-size: 70;
+    -fx-fill: rgba(54, 54, 54, 0.055);
+}
+
+.Page {
+    -fx-background-color: linear-gradient(to right, purple, blue);
+    -fx-padding: 80 80 80 80;
+    -fx-alignment: center;
+}
+
+.learnPage {
+    -fx-background-color: linear-gradient(to right, rgb(50, 247, 214), rgb(68, 196, 255));
+    -fx-padding: 0 0 0 0;
+}
+
+
+.scrollPane{
+    -fx-hbar-policy: never;
+}
+
+.scrollPane .viewport {
+    -fx-background-color: rgba(255,255,255,0.5);
+}
