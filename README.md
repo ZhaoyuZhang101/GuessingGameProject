@@ -41,4 +41,4 @@ BirdHouse Application for INFS3059 Project
 <h1>For Teams</h1>
 
 > The Application project is just a frame, which needs to put the video of birds and define the JSON file for question design,
-> All JSON files have been put in the resources [here]("/src/main/resources/com/project/guessingbirdgame/QuizJsons")
+> All JSON files have been put in the resources [here](/src/main/resources/com/project/guessingbirdgame/QuizJsons)
