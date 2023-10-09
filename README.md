@@ -1,18 +1,27 @@
 # GuessingGameProject
 BirdHouse Application for INFS3059 Project
-<h3> Basic Function of this App
-![Main Page](/assets/MainPage.png)
+<h3> Basic Function of this App</h3>
+<img src="/assets/MainPage.png" width="300px">
+
 ---
-Login Page :
-![Login Page](/assets/LoginPage.png)
+
+<h4>Login Page :</h4>
+<img src="/assets/LoginPage.png" width="300px">
+  
 >The Login page requires all users to put their name and studentId which will used for exam ranking.
+  
 ----
-Learning Page :
-![Learn Page](/assets/LearnPage.png)
+
+<h4>Learning Page :</h4>
+<img src="/assets/LearnPage.png" width="300px">
+
 ---
-Exam Page :
-![Exam Page](/assets/ExamPage.png)
-![Question Part](/assets/QuestionPart.png)
+
+<h4>Exam Page :</h4>
+<img src="/assets/ExamPage.png" width="300px">
+<img src="/assets/QuestionPart.png" width="300px">
+
 ---
-Rank Page :
-![Rank Page](/assets/RankPage.png)
+
+<h4>Rank Page :</h4>
+<img src="/assets/RankPage.png" width="300px">
