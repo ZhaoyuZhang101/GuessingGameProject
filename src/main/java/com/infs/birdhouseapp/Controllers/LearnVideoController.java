@@ -1,6 +1,7 @@
-package com.project.guessingbirdgame.Controllers;
+package com.infs.birdhouseapp.Controllers;
 
-import com.project.guessingbirdgame.Application;
+
+import com.infs.birdhouseapp.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,10 +13,10 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.io.File;
 
 public class LearnVideoController implements Initializable {
     public VBox VideoPage;

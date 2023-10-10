@@ -1,0 +1,9 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<VBox fx:id="VideoPage" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.infs.birdhouseapp.Controllers.LearnVideoController" stylesheets="@css/style.css" styleClass="learnPage">
+    <Button fx:id="BackButton" onAction="#Back" text="Back" styleClass="BackButton"/>
+    <MediaView fx:id="mediaView"/>
+
+</VBox>

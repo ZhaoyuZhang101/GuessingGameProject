@@ -1,9 +1,12 @@
-package com.project.guessingbirdgame.Controllers;
+package com.infs.birdhouseapp.Controllers;
 
-import com.project.guessingbirdgame.Application;
-import com.project.guessingbirdgame.TimeLineController;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.infs.birdhouseapp.Application;
+import com.infs.birdhouseapp.JsonClasses.QuizType;
+import com.infs.birdhouseapp.JsonClasses.RankType;
+import com.infs.birdhouseapp.TimeLineController;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,9 +14,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.IndexRange;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -21,17 +22,17 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.Writer;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import static com.infs.birdhouseapp.JsonClasses.CommonFunctions.readQuiz;
+import static com.infs.birdhouseapp.JsonClasses.CommonFunctions.readRank;
 
 public class ExamController implements Initializable {
     public StackPane VideoPage;
@@ -44,7 +45,6 @@ public class ExamController implements Initializable {
     private Label title;
     @FXML
     private MediaView mediaView;
-    private JSONArray Quizs;
     private int quizIndex = -1;
     private int ShowTitleCount = 0;
     private int ShowTitleCountDefault = 90;
@@ -52,6 +52,8 @@ public class ExamController implements Initializable {
     private int currentScore = 0;
 
     private boolean isPlay = false;
+
+    private QuizType quizContent;
 
 
     public void Back(ActionEvent actionEvent) throws IOException {
@@ -63,21 +65,18 @@ public class ExamController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-         timeLineController = new TimeLineController() {
+        try {
+            quizContent = readQuiz();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        timeLineController = new TimeLineController() {
             @Override
             public void tick() throws IOException {
                 super.tick();
                 ticks();
             }
         };
-        JSONObject quizJson;
-        try {
-            quizJson = readJson("src/main/resources/com/project/guessingbirdgame/QuizJsons/Quiz.json");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        // read quiz information from json.
-        Quizs = quizJson.getJSONArray("Quiz");
         // set title of quiz
         title = new Label();
         title.scaleXProperty().bind(VideoPage.widthProperty().multiply(0.01));
@@ -123,7 +122,7 @@ public class ExamController implements Initializable {
     public void generateVideo() {
         isPlay = true;
         title.setVisible(false);
-        String fileName = ((JSONObject) Quizs.get(quizIndex)).getString("Video");
+        String fileName = quizContent.getQuiz().get(quizIndex).getVideo();
         Media media = new Media(String.valueOf(Application.class.getResource("ExamVideos/"+fileName)));
         MediaPlayer player = new MediaPlayer(media);
         player.setOnReady(() -> {
@@ -149,23 +148,23 @@ public class ExamController implements Initializable {
     }
     public void ShowQuestion() {
         QuestionsPart.setVisible(true);
-        question.setText(((JSONObject) Quizs.get(quizIndex)).getString("Question"));
+        question.setText((quizContent.getQuiz().get(quizIndex)).getQuestion());
         question.setWrapText(true);
-        JSONArray answers = ((JSONObject) Quizs.get(quizIndex)).getJSONArray("Answer");
-        String correctAnswer = ((JSONObject) Quizs.get(quizIndex)).getString("CorrectAnswer");
+        String[] answers = (quizContent.getQuiz().get(quizIndex)).getAnswer();
+        String correctAnswer = (quizContent.getQuiz().get(quizIndex)).getCorrectAnswer();
         for (Object o : answers) {
             Button button = new Button(o.toString());
             answersSpace.getChildren().add(button);
             button.setId("AnswerButton");
             button.setOnAction(event -> {
 
-                if (quizIndex < Quizs.length()) {
+                if (quizIndex < quizContent.getQuiz().size()) {
                     if (Objects.equals(o.toString(), correctAnswer)) {
                         System.out.println("正确");
                         currentScore ++;
                         Score.setText("Score: "+currentScore);
                     }
-                    if (quizIndex < Quizs.length()-1) {
+                    if (quizIndex < quizContent.getQuiz().size()-1) {
                         showTitle();
                     } else {
                         try {
@@ -183,7 +182,7 @@ public class ExamController implements Initializable {
         answersSpace.getChildren().clear();
         QuestionsPart.setVisible(false);
         isPlay = false;
-        Label label = new Label("Well Done! You have finished All questions\nyour current Score is "+ currentScore + "/" + Quizs.length());
+        Label label = new Label("Well Done! You have finished All questions\nyour current Score is "+ currentScore + "/" + quizContent.getQuiz().size());
         label.setWrapText(true);
         label.setScaleX(3);
         label.setScaleY(3);
@@ -191,43 +190,32 @@ public class ExamController implements Initializable {
         VideoPage.getChildren().add(label);
         StackPane.setAlignment(label, Pos.CENTER);
 
-        JSONObject user = new JSONObject();
-        user.put("name", Application.currentUserName);
-        user.put("ID", Application.currentUserID);
-        user.put("Score", currentScore);
+        RankType.UserType user = new RankType.UserType(Application.currentUserName, currentScore, Application.currentUserID );
 
-        JSONObject rankJson = readJson("src/main/resources/com/project/guessingbirdgame/QuizJsons/Rank.json");
-        JSONArray rankInfo = rankJson.getJSONArray("Rank");
-        rankInfo.put(user);
 
-        JSONObject rankContent = new JSONObject();
-        rankContent.put("Rank", rankInfo);
-        Files.writeString(Paths.get("src/main/resources/com/project/guessingbirdgame/QuizJsons/Rank.json"), rankContent.toString(4));
-
+        RankType ranktype = readRank();
+        List<RankType.UserType> userTypeList = ranktype.getRank();
+        userTypeList.add(user);
+        try {
+            Gson gson = new GsonBuilder().create();
+            Writer writer = new FileWriter(Objects.requireNonNull(Objects.requireNonNull(Application.class.getResource("QuizJsons/Rank.json")).getPath()));
+            gson.toJson(ranktype, writer);
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("problem happens when writing data to json file");
+        }
     }
 
     public void showTitle() {
         quizIndex++;
-        JSONObject quiz = (JSONObject) Quizs.get(quizIndex);
+        QuizType.QuestionType questionType = quizContent.getQuiz().get(quizIndex);
         isPlay = false;
         // set title of quiz
-        System.out.println(quiz.getString("Name"));
-        title.setText(quiz.getString("Name"));
+        System.out.println(questionType.getName());
+        title.setText(questionType.getName());
         ShowTitleCount = ShowTitleCountDefault;
         answersSpace.getChildren().clear();
         QuestionsPart.setVisible(false);
-    }
-
-    public void ShowFinalScore() {
-
-    }
-
-    public JSONObject readJson(String address) throws IOException {
-        char[] line = new char[10000];
-        InputStreamReader input =new InputStreamReader(new FileInputStream(address));
-        int len =input.read(line);
-        String text =new String(line,0,len);
-        return new JSONObject(text);
     }
 
 }

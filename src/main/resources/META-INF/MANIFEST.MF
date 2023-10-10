@@ -1,7 +1,10 @@
 Manifest-Version: 1.0
-Main-Class: com.project.guessingbirdgame.Application
-Class-Path: javafx-graphics-21-ea+5-win.jar javafx-fxml-21-ea+5-win.jar 
- json-20220320.jar javafx-media-18.0.2-win.jar javafx-controls-21-ea+5.j
- ar javafx-graphics-21-ea+5.jar javafx-base-21-ea+5-win.jar javafx-contr
- ols-21-ea+5-win.jar javafx-fxml-21-ea+5.jar javafx-media-18.0.2.jar jav
- afx-base-21-ea+5.jar
+Main-Class: com.infs.birdhouseapp.Application
+Class-Path: javafx-base-17.0.6-win.jar javafx-graphics-17.0.6-win.jar co
+ ntrolsfx-11.1.2.jar javafx-controls-17.0.6-win.jar javafx-fxml-17.0.6-w
+ in.jar gson-2.10.1.jar javafx-fxml-17.0.6.jar javafx-media-18.0.1.jar j
+ avafx-media-18.0.1-win.jar javafx-graphics-18.0.1.jar javafx-graphics-1
+ 8.0.1-win.jar javafx-base-18.0.1.jar javafx-base-18.0.1-win.jar javafx-
+ graphics-17.0.6.jar javafx-controls-17.0.6.jar javafx-base-17.0.6.jar f
+ ormsfx-core-11.6.0.jar json-20220924.jar
+

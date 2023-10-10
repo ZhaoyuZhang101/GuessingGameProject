@@ -1,12 +1,10 @@
-package com.project.guessingbirdgame;
+package com.infs.birdhouseapp;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Application extends javafx.application.Application {
     public static String currentUserID = "";

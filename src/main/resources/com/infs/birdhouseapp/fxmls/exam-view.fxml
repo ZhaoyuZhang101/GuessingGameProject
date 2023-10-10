@@ -2,12 +2,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.media.MediaView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 <StackPane fx:id="VideoPage" xmlns:fx="http://javafx.com/fxml"
-           fx:controller="com.project.guessingbirdgame.Controllers.ExamController" stylesheets="@css/style.css" styleClass="learnPage">
+           fx:controller="com.infs.birdhouseapp.Controllers.ExamController" stylesheets="@css/style.css" styleClass="learnPage">
     <Button fx:id="BackButton" onAction="#Back" text="Back" styleClass="BackButton"/>
     <Label fx:id="Score" text="Score: 0" alignment="CENTER"/>
     <MediaView fx:id="mediaView"/>

@@ -1,11 +1,8 @@
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
 <VBox fx:id="hBox" alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.project.guessingbirdgame.Controllers.LoginController" stylesheets="@css/style.css" styleClass="Page">
+      fx:controller="com.infs.birdhouseapp.Controllers.LoginController" stylesheets="@css/style.css" styleClass="Page">
     <HBox alignment="CENTER">
         <Label fx:id="Name" text="Your Name: " textFill="white"/>
         <TextField fx:id="NameInput"/>

@@ -1,10 +1,7 @@
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.project.guessingbirdgame.Controllers.MainController" stylesheets="@css/style.css" >
+           fx:controller="com.infs.birdhouseapp.Controllers.MainController" stylesheets="@css/style.css" >
     <HBox fx:id="hBox" alignment="CENTER" spacing="20.0" styleClass="Page">
         <VBox fx:id="learningCard" alignment="CENTER" styleClass="Card" onMouseClicked="#LearningPage">
             <Label fx:id="learningText" alignment="CENTER" text="Learn" styleClass="Label"/>

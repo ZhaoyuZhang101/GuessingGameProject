@@ -1,6 +1,8 @@
-package com.project.guessingbirdgame.Controllers;
+package com.infs.birdhouseapp.Controllers;
 
-import com.project.guessingbirdgame.Application;
+
+import com.infs.birdhouseapp.Application;
+import com.infs.birdhouseapp.JsonClasses.RankType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,21 +12,19 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import static com.infs.birdhouseapp.JsonClasses.CommonFunctions.readRank;
 
 public class RankController implements Initializable {
     @FXML
@@ -40,40 +40,27 @@ public class RankController implements Initializable {
         StackPane.setAlignment(BackButton, Pos.TOP_LEFT);
         BackButton.setTranslateY(-80);
         BackButton.setTranslateX(-80);
-
-        JSONObject rankJson;
+        RankType rankType;
         try {
-            rankJson = readJson("src/main/resources/com/project/guessingbirdgame/QuizJsons/Rank.json");
+            rankType = readRank();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        List<JSONObject> users = new ArrayList<>();
-        JSONArray usersInfo = rankJson.getJSONArray("Rank");
-        for (Object o: usersInfo) {
-            JSONObject oj = new JSONObject(o.toString());
-            users.add(oj);
-        }
-        users.sort(Comparator.comparingInt(o -> -o.getInt("Score")));
+        List<RankType.UserType> users = rankType.getRank();
+
+        users.sort(Comparator.comparingInt(o -> -o.getScore()));
         int rank = 0;
         int currentScore = 9999;
         ObservableList<String> scores = FXCollections.observableArrayList();
-        for (JSONObject jo: users) {
-            if ( jo.getInt("Score") < currentScore) {
-                currentScore = jo.getInt("Score");
+        for (RankType.UserType u: users) {
+            if ( u.getScore() < currentScore) {
+                currentScore = u.getScore();
                 rank ++;
             }
-            String content = rank +". " + jo.getString("name") + "/ Score: " + jo.getInt("Score");
+            String content = rank +". " + u.getName() + "/ Score: " + u.getScore();
             scores.add(content);
         }
         listView.setItems(scores);
-    }
-
-    public JSONObject readJson(String address) throws IOException {
-        char[] line = new char[10000];
-        InputStreamReader input =new InputStreamReader(new FileInputStream(address));
-        int len =input.read(line);
-        String text =new String(line,0,len);
-        return new JSONObject(text);
     }
 
     public void Back(ActionEvent actionEvent) throws IOException {

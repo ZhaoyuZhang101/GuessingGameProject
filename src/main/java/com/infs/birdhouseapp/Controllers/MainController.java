@@ -1,6 +1,7 @@
-package com.project.guessingbirdgame.Controllers;
+package com.infs.birdhouseapp.Controllers;
 
-import com.project.guessingbirdgame.Application;
+
+import com.infs.birdhouseapp.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;

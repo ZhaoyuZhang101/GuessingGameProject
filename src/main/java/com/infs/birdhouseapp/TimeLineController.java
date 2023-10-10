@@ -1,4 +1,4 @@
-package com.project.guessingbirdgame;
+package com.infs.birdhouseapp;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
