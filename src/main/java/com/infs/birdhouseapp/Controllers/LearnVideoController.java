@@ -28,7 +28,7 @@ public class LearnVideoController implements Initializable {
     }
 
     public void loadVideo(File file) throws IOException {
-        Media media = new Media(String.valueOf(Application.class.getResource("LearnVideos/"+file.getName())));
+        Media media = new Media((new File(Application.RESOURCES_PATH+"/LearnVideos/"+file.getName())).toURI().toString());
         MediaPlayer player = new MediaPlayer(media);
         mediaView.setMediaPlayer(player);
         player.setAutoPlay(true);
