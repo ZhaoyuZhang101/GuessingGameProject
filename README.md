@@ -17,7 +17,7 @@ BirdHouse Application for INFS3059 Project
 - [2. For Teams Developing and Configuration](#2-for-teams-developing-and-configuration)
   - [2.1 Quiz setting](#21-quiz-setting)
   - [2.2 Ranking File](#22-ranking-file)
-  - [2.3 Learning Videos](#23-learning-videos)
+  - [2.3 Videos](#23-videos)
 - [3. Current Problems](#3-current-problems)
 - [Reference](#reference)
 
