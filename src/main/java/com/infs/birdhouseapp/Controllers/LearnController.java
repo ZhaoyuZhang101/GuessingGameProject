@@ -37,7 +37,7 @@ public class LearnController implements Initializable {
         Content.setVgap(30);
         Window.setBackground(Background.EMPTY);
         Content.prefWidthProperty().bind(Window.widthProperty());
-        File learnVideoFolder = new File(Objects.requireNonNull(Application.class.getResource("LearnVideos")).getPath());
+        File learnVideoFolder = new File(Application.RESOURCES_PATH + "/LearnVideos");
         File[] files = learnVideoFolder.listFiles();
         assert files != null;
         for (File f : files) {
@@ -51,7 +51,18 @@ public class LearnController implements Initializable {
 
         VBox VideoSpace = new VBox();
 
-        Media media = new Media(String.valueOf(Application.class.getResource("LearnVideos/"+file.getName())));
+        MediaView mediaView = getMediaView(file);
+        VideoSpace.getChildren().add(mediaView);
+        Label label = new Label(file.getName());
+        label.setTextFill(Color.WHITE);
+        VideoSpace.getChildren().add(label);
+        System.out.println(mediaView.getMediaPlayer());
+        return VideoSpace;
+    }
+
+    private MediaView getMediaView(File file) {
+
+        Media media = new Media((new File(Application.RESOURCES_PATH + "/LearnVideos/"+ file.getName())).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(false);
         MediaView mediaView = new MediaView();
@@ -64,13 +75,7 @@ public class LearnController implements Initializable {
         mediaView.setFitWidth(200);
         mediaView.setFitHeight(100);
         mediaView.setVisible(true);
-        VideoSpace.getChildren().add(mediaView);
-        Label label = new Label(file.getName());
-        label.setTextFill(Color.WHITE);
-        VideoSpace.getChildren().add(label);
-        System.out.println(Application.class.getResource("LearnVideos/" + file.getName()));
-        System.out.println(mediaView.getMediaPlayer());
-        return VideoSpace;
+        return mediaView;
     }
 
     public void VideoShow(File file) {

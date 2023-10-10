@@ -4,6 +4,7 @@ BirdHouse Application for INFS3059 Project
 
 > This APP has basically __3 parts__ to achieve the project requirements, the __learning part__, __the exam part__, and __the rank part__.
 > As shown in the following picture.
+
 <img src="/assets/MainPage.png" width="300px">
 
 
@@ -28,7 +29,7 @@ BirdHouse Application for INFS3059 Project
 > On the exam page, the users will be tested on the __features of the birds__, it will first show a video about the __voice of the birds__ or some __behaviors of the birds__, and then the __question__ will be displayed to the users,
 > users need to answer the question by click the __answer button__ to move to next video and get the __score__ if the answer is right. After answering all the questions, the final scores will be shown and the user's score data will be stored in a JSON file.
 
-<img src="/assets/ExamPage.png" width="300px"> <img src="/assets/QuestionPart.png" width="300px">
+<img src="/assets/README/ExamPage.png" width="300px"> <img src="/assets/README/QuestionPart.png" width="300px">
 
 
 

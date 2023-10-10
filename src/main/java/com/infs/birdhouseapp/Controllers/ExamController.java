@@ -23,6 +23,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -123,7 +124,7 @@ public class ExamController implements Initializable {
         isPlay = true;
         title.setVisible(false);
         String fileName = quizContent.getQuiz().get(quizIndex).getVideo();
-        Media media = new Media(String.valueOf(Application.class.getResource("ExamVideos/"+fileName)));
+        Media media = new Media((new File(Application.RESOURCES_PATH + "/ExamVideos/"+fileName)).toURI().toString());
         MediaPlayer player = new MediaPlayer(media);
         player.setOnReady(() -> {
             mediaView.setMediaPlayer(player);
@@ -198,7 +199,7 @@ public class ExamController implements Initializable {
         userTypeList.add(user);
         try {
             Gson gson = new GsonBuilder().create();
-            Writer writer = new FileWriter(Objects.requireNonNull(Objects.requireNonNull(Application.class.getResource("QuizJsons/Rank.json")).getPath()));
+            Writer writer = new FileWriter(Application.RESOURCES_PATH+"/QuizJsons/Rank.json");
             gson.toJson(ranktype, writer);
             writer.close();
         } catch (IOException e) {

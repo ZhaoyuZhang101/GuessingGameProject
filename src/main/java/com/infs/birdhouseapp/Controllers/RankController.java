@@ -41,6 +41,7 @@ public class RankController implements Initializable {
         BackButton.setTranslateY(-80);
         BackButton.setTranslateX(-80);
         RankType rankType;
+        System.out.println("加載頁面");
         try {
             rankType = readRank();
         } catch (IOException e) {
