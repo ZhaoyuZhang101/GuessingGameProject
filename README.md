@@ -24,7 +24,7 @@ BirdHouse Application for INFS3059 Project
 ## User Guidance: 
 - Setup:
   
-  The Latest version is [BirdHouseGuessingGame_Ver.0.1.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.1.0). if want to find more versions click [here](/assets/RELEASED).
+  The Latest version is [BirdHouseGuessingGame_Ver.0.1.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.1.0.zip). if want to find more versions click [here](/assets/RELEASED).
   
   To use this JavaFx Pack, just download the latest zip file and unpack it and you will get a folder named BirdHouseGuessingGame, then go to `BirdHouseGuessingGame/bin/app.bat`
   Then click the `app.bat` then the application will be opened.
