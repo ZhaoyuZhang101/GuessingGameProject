@@ -1,53 +1,96 @@
 # GuessingGameProject
 BirdHouse Application for INFS3059 Project
-<h3> Basic Function of this App: </h3>
 
-> This APP has basically __3 parts__ to achieve the project requirements, the __learning part__, __the exam part__, and __the rank part__.
-> As shown in the following picture.
+<h5>2023/10/11 Update: </h5>
 
-<img src="/assets/MainPage.png" width="300px">
+> 1. The project file can be downloaded from [here](/assets/RELEASED)
+> 2. All resource files have been moving out of the package, which could make it easier to edit
+> 3. The Java version compiled to the project has been changed from `Java 21` to `Java 17` to solve the [un-executable package problem](#3-current-problems)
 
+## Appendix:
+- [User Guidance](#user-guidance)
+- [1. Basic Function of this App](#1-basic-function-of-this-app)
+  - [1.1 Login Page](#11-login-page)
+  - [1.2 Learning Page](#12-learning-page)
+  - [1.3 Exam Page](#13-exam-page)
+  - [1.4 Rank Page](#14-rank-page)
+- [2. For Teams Developing and Configuration](#2-for-teams-developing-and-configuration)
+  - [2.1 Quiz setting](#21-quiz-setting)
+  - [2.2 Ranking File](#22-ranking-file)
+  - [2.3 Videos](#23-videos)
+- [3. Current Problems](#3-current-problems)
+- [Reference](#reference)
 
-
-- <h4>Login Page :</h4>
-
->The Login page requires all users to put their name and studentId which will used for exam ranking.
-<img src="/assets/LoginPage.png" width="300px">
+## User Guidance: 
+- Setup:
   
+  The Latest version is [BirdHouseGuessingGame_Ver.0.1.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.1.0.zip). if want to find more versions click [here](/assets/RELEASED).
+  
+  To use this JavaFx Pack, just download the latest zip file and unpack it and you will get a folder named BirdHouseGuessingGame, then go to `BirdHouseGuessingGame/bin/app.bat`
+  Then click the `app.bat` then the application will be opened.
+- Configuration:
+  
+  Since the resources files have been moving out of the package, you can find those files in `BirdHouseGuessingGame/res/` and the configuration way has been talked about in [here(Quiz)](#21-quiz-setting) and [here(Videos)](#23-learning-videos)
 
 
-- <h4>Learning Page :</h4>
+## 1. Basic Function of this App:
 
-> In order to strengthen the __recognition__ of the nature birds for __Campus Students__, the APP needs to hold __teaching functions__, 
-> therefore in the learning page the multiple __education videos__ about the features of birds will be shown. The user could click those videos and enter to watch what they are interested in to learn the knowledge.
-<img src="/assets/LearnPage.png" width="300px">
+This APP has basically __3 parts__ to achieve the project requirements, the __learning part__, __the exam part__, and __the rank part__.
+As shown in the following picture.
 
-
-
-- <h4>Exam Page :</h4>
-
-> On the exam page, the users will be tested on the __features of the birds__, it will first show a video about the __voice of the birds__ or some __behaviors of the birds__, and then the __question__ will be displayed to the users,
-> users need to answer the question by click the __answer button__ to move to next video and get the __score__ if the answer is right. After answering all the questions, the final scores will be shown and the user's score data will be stored in a JSON file.
-
-<img src="/assets/README/ExamPage.png" width="300px"> <img src="/assets/README/QuestionPart.png" width="300px">
+<div align="center">
+	<img src="/assets/README/MainPage.png" width="300px">
+</div>
 
 
 
-- <h4>Rank Page :</h4>
+### 1.1 Login Page:
 
-> When users finish all the tasks, they can enter the ranking page to check their rank.
-<img src="/assets/RankPage.png" width="300px">
+The Login page requires all users to put their name and studentId which will used for exam ranking.
+
+<div align="center">
+	<img src="/assets/README/LoginPage.png" width="300px">
+</div>
+
+
+### 1.2 Learning Page:
+
+In order to strengthen the __recognition__ of the nature birds for __Campus Students__, the APP needs to hold __teaching functions__, 
+Therefore in the learning page multiple __education videos__ about the features of birds will be shown. The user could click those videos and enter to watch what they are interested in to learn the knowledge.
+
+<div align="center">
+	<img src="/assets/README/LearnPage.png" width="300px">
+</div>
+
+
+### 1.3 Exam Page:
+
+On the exam page, the users will be tested on the __features of the birds__, it will first show a video about the __voice of the birds__ or some __behaviors of the birds__, and then the __question__ will be displayed to the users,
+Users need to answer the question by clicking the __answer button__ to move to the next video and get the __score__ if the answer is right. After answering all the questions, the final scores will be shown and the user's score data will be stored in a JSON file.
+
+<div align="center">
+	<img src="/assets/README/ExamPage.png" width="300px"> <img src="/assets/README/QuestionPart.png" width="300px">
+</div>
+
+
+### 1.4 Rank Page:
+
+When users finish all the tasks, they can enter the ranking page to check their rank.
+
+<div align="center">
+	<img src="/assets/README/RankPage.png" width="300px">
+</div>
 
 ---
-<h3>For Teams Developing and Configurating: </h3>
+## 2. For Teams Developing and Configuration: 
 
-> The Application project is just a frame, which needs to put the video of birds and define the JSON file for question design,
-> All JSON files have been put in the resources [here](/src/main/resources/com/project/guessingbirdgame/QuizJsons)
+The Application project is just a frame, which needs to put the video of birds and define the JSON file for question design,
+All JSON files have been put in the resources folder called `res/QuizJsons/`
 
-- </h4>Quiz setting: </h4>
+### 2.1 Quiz setting:
 
-> The [Quiz.json](/src/main/resources/com/project/guessingbirdgame/QuizJsons/Quiz.json) is used to add questions just input the __name__, __question content__, __video name__ as well as __answers__ and the __correct answers__ with the following format.
-> Then those questions will be automatically shown on the exam page. After filling in the video name, the video with the same name should also be put in [ExamVideos file](/src/main/resources/com/project/guessingbirdgame/ExamVideos/)
+The `res/QuizJsons/Quiz.json` is used to add questions just input the __name__, __question content__, __video name__ as well as __answers__ and the __correct answers__ with the following format.
+Then those questions will be automatically shown on the exam page. After filling in the video name, the video with the same name should also be put in `res/ExamVideos/`
 
 ```json
     {
@@ -62,8 +105,8 @@ BirdHouse Application for INFS3059 Project
       "CorrectAnswer": "this is answer3"
     }
 ```
-- </h4>Ranking File: </h4>
-> According to the previous introduction of the app, all users' names, IDs, and scores will be stored in [Rank.json](/src/main/resources/com/project/guessingbirdgame/QuizJsons/Rank.json) automatically with the following format, therefore, there is no need for editing.
+### 2.2 Ranking File: 
+According to the previous introduction of the app, all users' names, IDs, and scores will be stored in `res/QuizJsons/Rank.json` automatically with the following format, therefore, there is no need for editing.
 ```json
 {
     "Rank": [
@@ -80,13 +123,15 @@ BirdHouse Application for INFS3059 Project
     ]
 }
 ```
-- </h4>Learning Videos: </h4>
-> All learning videos will be put in the [LearnVideos folder](/src/main/resources/com/project/guessingbirdgame/LearnVideos/), to set the learn page, just need to put all videos in this folder and then, the app will read those videos and shown in learning page.
+### 2.3 Videos: 
+All learning videos will be put in the `res/LearnVideos/`, to set the learn page, just need to put all videos in this folder and then, the app will read those videos and show on the learning page.
+Also all exam videos will be put in the `res/ExamVideos/`, put all exam videos inside, and write the name of the video file in `Quiz.json` then the exam page will work.
 
 ---
-<h3>Current Problems: </h3>
+## 3. Current Problems: 
+`(Solved)`
 
-> The JavaFX applications need to be packed as an executable Jar file to make sure the App can be used in any platform or device with a Java environment. But when running the package function by using Jlink the problem will be caused, as shown below
+The JavaFX applications need to be packed as an executable Jar file to make sure the App can be used in any platform or device with a Java environment. But when running the package function by using Jlink the problem will be caused, as shown below
 ```cmd
 java.lang.module.FindException: Error reading module: C:\Content\ANU_CECS\INFS3059\GuessingGameProject\target\classes
 	at java.base/jdk.internal.module.ModulePath.readModule(ModulePath.java:350)
@@ -106,7 +151,7 @@ Caused by: java.lang.module.InvalidModuleDescriptorException: Unsupported major.
 	at java.base/jdk.internal.module.ModulePath.readModule(ModulePath.java:320)
 	... 8 more
 ```
-> According to the answers provided by [StackOverFlow](https://stackoverflow.com/questions/68603262/how-to-fix-unsupported-class-file-major-version-60-in-tomcat9)[^2][^3], this method may happened because the Jlink version does compile to Java 21, since recently there is no way to upgrade the Jlink, the first try is to change the Java 21 to 17, but the problem still caused
+According to the answers provided by [StackOverFlow](https://stackoverflow.com/questions/68603262/how-to-fix-unsupported-class-file-major-version-60-in-tomcat9)[^2][^3], this method may happened because the Jlink version does compile to Java 21, since recently there is no way to upgrade the Jlink, the first try is to change the Java 21 to 17, but the problem still caused
 ```cmd
 Error: automatic module cannot be used with jlink: org.json from file:///C:/Users/zhang/.m2/repository/org/json/json/20220320/json-20220320.jar
 [ERROR] Command execution failed.
@@ -116,12 +161,12 @@ org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit 
     at org.openjfx.JavaFXBaseMojo.executeCommandLine (JavaFXBaseMojo.java:567)
     at org.openjfx.JavaFXBaseMojo.executeCommandLine (JavaFXBaseMojo.java:434)
 ```
-> According to the problem description and [answer reference](https://stackoverflow.com/questions/56395749/error-automatic-module-cannot-be-used-with-jlink-maven-with-javafx)[^1] this problem was caused by the JSON dependency that has been used and since the Jlink doesn't support the JSON, therefore could cause a problem.
-> The other way to package the JavaFx Application also has been tried, even though the jar file has been created but still inexecutable since the __dependencies missing__, therefore, more time is needed to solve this problem, by the meanwhile the video and the
-> question design still will been simultaneously conducted.
+According to the problem description and [answer reference](https://stackoverflow.com/questions/56395749/error-automatic-module-cannot-be-used-with-jlink-maven-with-javafx)[^1] this problem was caused by the JSON dependency that has been used and since the Jlink doesn't support the JSON, therefore could cause a problem.
 
-<h3>Reference: </h3>
+The other way to package the JavaFx Application also has been tried, even though the jar file has been created but still inexecutable since the __dependencies missing__, therefore, more time is needed to solve this problem, by meanwhile the video and the
+question design still will been simultaneously conducted.
 
+## Reference:
 [^1]: user12043. (2022, 6 14). Error: automatic module cannot be used with jlink: - Maven with JavaFX. Retrieved from StackOverFlow: https://stackoverflow.com/questions/56395749/error-automatic-module-cannot-be-used-with-jlink-maven-with-javafx.
 [^2]: Karwasz, P. P. (2021, 8 1). https://stackoverflow.com/questions/68603262/how-to-fix-unsupported-class-file-major-version-60-in-tomcat9. Retrieved from StackOverFlow: https://stackoverflow.com/questions/68603262/how-to-fix-unsupported-class-file-major-version-60-in-tomcat9.
 [^3]: uer9847788. (2022, 1 5). How to resolve Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0 error? [duplicate]. Retrieved from StackOverFlow: https://stackoverflow.com/questions/70600315/how-to-resolve-java-runtime-class-file-version-55-0-this-version-of-the-java.
