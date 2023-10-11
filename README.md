@@ -1,6 +1,12 @@
 # GuessingGameProject
 BirdHouse Application for INFS3059 Project
 
+<h5>2023/10/12 Update: </h5>
+
+> 1. New released [BirdHouseGuessingGame_Ver.0.2.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.2.0.zip)
+> 2. Now the `login page` and the `ranking page` have been deleted. Users can directly enter the main page
+> 3. `Rank.json` is now useless
+
 <h5>2023/10/11 Update: </h5>
 
 > 1. The project file can be downloaded from [here](/assets/RELEASED)
@@ -10,13 +16,13 @@ BirdHouse Application for INFS3059 Project
 ## Appendix:
 - [User Guidance](#user-guidance)
 - [1. Basic Function of this App](#1-basic-function-of-this-app)
-  - [1.1 Login Page](#11-login-page)
+  - ~~[1.1 Login Page](#11-login-page)~~
   - [1.2 Learning Page](#12-learning-page)
   - [1.3 Exam Page](#13-exam-page)
-  - [1.4 Rank Page](#14-rank-page)
+  - ~~[1.4 Rank Page](#14-rank-page)~~
 - [2. For Teams Developing and Configuration](#2-for-teams-developing-and-configuration)
   - [2.1 Quiz setting](#21-quiz-setting)
-  - [2.2 Ranking File](#22-ranking-file)
+  - ~~[2.2 Ranking File](#22-ranking-file)~~
   - [2.3 Videos](#23-videos)
 - [3. Current Problems](#3-current-problems)
 - [Reference](#reference)
@@ -24,13 +30,13 @@ BirdHouse Application for INFS3059 Project
 ## User Guidance: 
 - Setup:
   
-  The Latest version is [BirdHouseGuessingGame_Ver.0.1.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.1.0.zip). if want to find more versions click [here](/assets/RELEASED).
+  The Latest version is [BirdHouseGuessingGame_Ver.0.2.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.2.0.zip). if want to find more versions click [here](/assets/RELEASED).
   
   To use this JavaFx Pack, just download the latest zip file and unpack it and you will get a folder named BirdHouseGuessingGame, then go to `BirdHouseGuessingGame/bin/app.bat`
   Then click the `app.bat` then the application will be opened.
 - Configuration:
   
-  Since the resources files have been moving out of the package, you can find those files in `BirdHouseGuessingGame/res/` and the configuration way has been talked about in [here(Quiz)](#21-quiz-setting) and [here(Videos)](#23-learning-videos)
+  Since the resources files have been moving out of the package, you can find those files in `BirdHouseGuessingGame/res/` and the configuration way has been talked about in [here(Quiz)](#21-quiz-setting) and [here(Videos)](#23-videos)
 
 
 ## 1. Basic Function of this App:
@@ -44,9 +50,9 @@ As shown in the following picture.
 
 
 
-### 1.1 Login Page:
+### ~~1.1 Login Page:~~
 
-The Login page requires all users to put their name and studentId which will used for exam ranking.
+~~The Login page requires all users to put their name and studentId which will used for exam ranking.~~
 
 <div align="center">
 	<img src="/assets/README/LoginPage.png" width="300px">
@@ -73,9 +79,9 @@ Users need to answer the question by clicking the __answer button__ to move to t
 </div>
 
 
-### 1.4 Rank Page:
+### ~~1.4 Rank Page:~~
 
-When users finish all the tasks, they can enter the ranking page to check their rank.
+~~When users finish all the tasks, they can enter the ranking page to check their rank.~~
 
 <div align="center">
 	<img src="/assets/README/RankPage.png" width="300px">
@@ -105,8 +111,8 @@ Then those questions will be automatically shown on the exam page. After filling
       "CorrectAnswer": "this is answer3"
     }
 ```
-### 2.2 Ranking File: 
-According to the previous introduction of the app, all users' names, IDs, and scores will be stored in `res/QuizJsons/Rank.json` automatically with the following format, therefore, there is no need for editing.
+### ~~2.2 Ranking File:~~ 
+~~According to the previous introduction of the app, all users' names, IDs, and scores will be stored in `res/QuizJsons/Rank.json` automatically with the following format, therefore, there is no need for editing.~~
 ```json
 {
     "Rank": [
