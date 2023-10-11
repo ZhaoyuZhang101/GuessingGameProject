@@ -41,7 +41,7 @@ BirdHouse Application for INFS3059 Project
 
 ## 1. Basic Function of this App:
 
-This APP has basically __3 parts__ to achieve the project requirements, the __learning part__, __the exam part__, and __the rank part__.
+This APP has basically __2 parts__ to achieve the project requirements, the __learning part__, __the exam part__, ~~and __the rank part__.~~
 As shown in the following picture.
 
 <div align="center">
