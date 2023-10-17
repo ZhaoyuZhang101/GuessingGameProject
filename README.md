@@ -3,13 +3,13 @@ BirdHouse Application for INFS3059 Project
 
 <h5>2023/10/12 Update: </h5>
 
-> 1. New released [BirdHouseGuessingGame_Ver.0.2.0](/assets/RELEASED/BirdHouseGuessingGame_Ver.0.2.0.zip)
+> 1. New released [BirdHouseGuessingGame_Ver.0.2.0](./assets/RELEASED/BirdHouseGuessingGame_Ver.0.2.0.zip)
 > 2. Now the `login page` and the `ranking page` have been deleted. Users can directly enter the main page
 > 3. `Rank.json` is now useless
 
 <h5>2023/10/11 Update: </h5>
 
-> 1. The project file can be downloaded from [here](/assets/RELEASED)
+> 1. The project file can be downloaded from [here](./assets/RELEASED)
 > 2. All resource files have been moving out of the package, which could make it easier to edit
 > 3. The Java version compiled to the project has been changed from `Java 21` to `Java 17` to solve the [un-executable package problem](#3-current-problems)
 
